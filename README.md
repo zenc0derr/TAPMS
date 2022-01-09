@@ -1,4 +1,4 @@
-# Training-and-Placement-System
+# TAPMS
 
 ## Introduction
 Amrita University is a multi-campus, multi-disciplinary teaching and research university that includes a number of departments, students, teachers, scholars and other staff working across multiple schools and campuses. Students pursue Undergraduate, Post-graduate, Integrated, Dual degree, Doctorate, online diploma and other degree programs in Engineering & Technology, Medical & Health sciences, Business & Management, Architecture & Planning, Sciences, Arts & Culture, Law & Commerce, Humanities & Social Sciences and Philosophy & Spiritual studies. Students can opt for either placements, higher studies, research or Entrepreneurship.
