@@ -13,16 +13,14 @@ const db = mysql.createConnection({
   database: "TAPMS",
 });
 
-/* app.post("/create", (req, res) => {
-  const name = req.body.name;
-  const age = req.body.age;
-  const country = req.body.country;
-  const position = req.body.position;
-  const wage = req.body.wage;
+ app.post("/addCompany", (req, res) => {
+  const Comapny_Name = req.body.Comapny_Name;
+  const Company_Website = req.body.Website
+  const Company_id = req.body.id;
 
   db.query(
-    "INSERT INTO employees (name, age, country, position, wage) VALUES (?,?,?,?,?)",
-    [name, age, country, position, wage],
+    "INSERT INTO Company (Company_ID, Comapny_Name, Website) VALUES (?,?,?)",
+    [Company_id, Comapny_Name, Company_Website],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -31,7 +29,7 @@ const db = mysql.createConnection({
       }
     }
   );
-}); */
+});
 
 app.get("/company", (req, res) => {
   db.query("SELECT * FROM Company ", (err, result) => {
@@ -64,8 +62,8 @@ app.post("/login", (req, res) => {
   );
 });
 
-app.get("/students", (req, res) => {
-  db.query("SELECT * FROM Students_Personal_Database", (err, result) => {
+app.get("/student", (req, res) => {
+  db.query("SELECT Full_name, Roll_no,School_Campus  FROM Students_Personal_Database ", (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -74,12 +72,13 @@ app.get("/students", (req, res) => {
   });
 });
 
-app.put("/update", (req, res) => {
-  const id = req.body.id;
-  const wage = req.body.wage;
+app.put("/Editcompany", (req, res) => {
+  const Company_id = req.body.Company_id;
+  const Company_Name = req.body.Company_Name;
+  const Company_Website = req.body.Company_Website;
   db.query(
-    "UPDATE employees SET wage = ? WHERE id = ?",
-    [wage, id],
+    "UPDATE Company SET Comapny_Name = ?, Website = ? WHERE Company_ID = ?",
+    [Company_Name, Company_Website, Company_id],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -90,9 +89,9 @@ app.put("/update", (req, res) => {
   );
 });
 
-app.delete("/delete/:id", (req, res) => {
+app.delete("/deleteCompany/:id", (req, res) => {
   const id = req.params.id;
-  db.query("DELETE FROM employees WHERE id = ?", id, (err, result) => {
+  db.query("DELETE FROM Company WHERE Company_ID = ?  ", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -101,9 +100,9 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
-app.delete("/deleteCompany/:id", (req, res) => {
+app.delete("/deleteStudent/:id", (req, res) => {
   const id = req.params.id;
-  db.query("DELETE FROM Company WHERE Company_ID = ?  ", id, (err, result) => {
+  db.query("DELETE FROM Students_Personal_Database WHERE Roll_no = ?  ", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {

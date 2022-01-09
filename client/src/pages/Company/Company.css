@@ -1,0 +1,96 @@
+body {
+    background-color: #E0B0DD;
+    background-size: cover; 
+    }
+    
+    .company-title {
+    text-transform:none;
+    font-weight: 400;
+    text-decoration: none;
+    font-family:cursive;
+    align-items: center;
+    color: rgb(22, 21, 21);
+    }
+    
+    .add
+    {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3%;
+      margin-bottom: 0%;
+      width: 60%;
+      height: 60%;
+    }
+    
+    .company-box { 
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* outline-style:double;
+      outline-color: red;
+      outline-width: 1%; */
+      color: #eee;
+      text-align: center;
+      border-radius: 5%;
+      background:rgb(247, 246, 246); 
+      display: flex;
+      flex-direction: column;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2%;
+      margin-bottom: 10%;
+      width: 35%;
+      height: 60%;
+    }
+    
+    .company-link
+    {
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      font-style: oblique;
+     font-weight: 300;
+     color: #000;
+    }
+    
+    button {
+    padding: 2% 2%;
+    margin: 5%;
+    border-radius: 5px; 
+    border: none;
+    font-family:'Times New Roman', Times, serif;
+    background: #292828; 
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(241, 236, 236);
+    width: 13%;
+    }
+    
+    /* button:focus {
+      border: none;
+      background: rgb(13, 210, 245);
+      color: gray;
+      border-radius: 7%;
+    }
+    
+    button:hover{
+    background: rgb(13, 210, 245);
+    color: gray;
+    cursor:pointer;
+    border-radius: 7%;
+    }
+     */
