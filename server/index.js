@@ -9,7 +9,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "YOUR_PASSWORD",
+  password: "h%qNT4KJVZ",
   database: "TAPMS",
 });
 
@@ -32,6 +32,16 @@ const db = mysql.createConnection({
     }
   );
 }); */
+
+app.get("/company", (req, res) => {
+  db.query("SELECT * FROM Company ", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
 
 app.post("/login", (req, res) => {
   const username = req.body.username;
@@ -83,6 +93,17 @@ app.put("/update", (req, res) => {
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
   db.query("DELETE FROM employees WHERE id = ?", id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.delete("/deleteCompany/:id", (req, res) => {
+  const id = req.params.id;
+  db.query("DELETE FROM Company WHERE Company_ID = ?  ", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {
